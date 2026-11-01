@@ -1,0 +1,40 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments and local configuration
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# MLflow experiment outputs
+mlruns/
+mlartifacts/
+mlflow.db
+mlflow.db-*
+
+# Build and test outputs
+build/
+dist/
+*.egg-info/
+.coverage
+.coverage.*
+htmlcov/
+
+# Local logs and editor files
+*.log
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Preserved local files from the earlier repository cleanup
+.local-archive/
