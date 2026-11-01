@@ -1,0 +1,216 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "created_at": "2026-11-01T16:17:36.675112+00:00",
+  "mlflow": {
+    "run_id": "6784a0d69b0d4daa9a37ac37b5d961ea",
+    "experiment_id": "1"
+  },
+  "git": {
+    "commit": "e6d951f9ee9dd7ee0fdb05feb25ab92cde1de5c5",
+    "dirty": true
+  },
+  "environment": {
+    "python": "3.13.0 (tags/v3.13.0:60403a5, Oct  7 2024, 09:38:07) [MSC v.1941 64 bit (AMD64)]",
+    "packages": {
+      "scikit-learn": "1.7.2",
+      "xgboost": "3.2.0",
+      "lightgbm": "4.6.0",
+      "pandas": "2.3.2",
+      "numpy": "2.4.6",
+      "shap": "0.51.0",
+      "mlflow": "3.11.1",
+      "joblib": "1.5.2",
+      "matplotlib": "3.9.2"
+    }
+  },
+  "source_sha256": {
+    "src/pipelines/evaluate.py": "3efe742a700e68489af5e98b3028477a92119219443c84559e5a5ec382d74a1d",
+    "src/pipelines/pipeline.py": "8dc770a88e799f357bffff2cc79a46b3dc667a0d57a797ff0186c74561144de3",
+    "src/pipelines/preprocessing.py": "a1a0f0aef7c276a6aa938aed307c15d4541d65bb594f7b8d468838ce8868f765",
+    "src/pipelines/save.py": "5a7e9b53b88bab88a6272a4b0642d718b9ec4cdd9a4aabf5e7c9be2c97c347d4",
+    "src/pipelines/train.py": "d218a2dcfce0cac7f55edf049119f1fc555742394d7765c0eb0d73474ad1a4b1",
+    "requirements.txt": "b7fde442d56e1061653bb17bc501fd2636fa38acd8d3de7df96ab45058fe5f94"
+  },
+  "dataset": {
+    "input_source": {
+      "file": "student_depression_dataset_processed.csv",
+      "kind": "processed_cache",
+      "sha256": "1447c5e301b24b95d6bfebc25ab8b4c9e7f2711a5184f169e2a78910026e0af0"
+    },
+    "rows": 27901,
+    "features": [
+      "gender",
+      "age",
+      "academic_pressure",
+      "work_pressure",
+      "cgpa",
+      "study_satisfaction",
+      "job_satisfaction",
+      "sleep_duration",
+      "degree",
+      "suicidal_thoughts",
+      "work_study_hours",
+      "financial_stress",
+      "family_history",
+      "stress_score",
+      "satisfaction_score",
+      "pressure_satisfaction_gap",
+      "work_hours_per_sleep",
+      "cgpa_pressure_ratio"
+    ],
+    "evaluated_table_sha256": "295b433415a32c026ed17790b4ce8cdb0065c1d8fc62c441ee1f388083dbb0d6",
+    "fingerprint_format": "pandas DataFrame.to_csv(index=False, lineterminator=LF), UTF-8",
+    "class_counts": {
+      "1": 16336,
+      "0": 11565
+    }
+  },
+  "evaluation_protocol": {
+    "test_size": 0.2,
+    "split_random_state": 42,
+    "stratified": true,
+    "train_rows": 22320,
+    "test_rows": 5581,
+    "cv_splits": 5,
+    "cv_shuffle": false,
+    "cv_scope": "full_dataset",
+    "cv_std_ddof": 0,
+    "positive_label": 1,
+    "limitations": [
+      "Preprocessing is unchanged and runs before train/test splitting, or reuses a processed cache.",
+      "CV is unchanged and uses the full dataset, including the holdout rows."
+    ]
+  },
+  "model_type": "StackingClassifier",
+  "model_parameters": {
+    "cv": 5,
+    "final_estimator__C": 1.0,
+    "final_estimator__class_weight": null,
+    "final_estimator__dual": false,
+    "final_estimator__fit_intercept": true,
+    "final_estimator__intercept_scaling": 1,
+    "final_estimator__l1_ratio": null,
+    "final_estimator__max_iter": 1000,
+    "final_estimator__multi_class": "deprecated",
+    "final_estimator__n_jobs": null,
+    "final_estimator__penalty": "l2",
+    "final_estimator__random_state": null,
+    "final_estimator__solver": "lbfgs",
+    "final_estimator__tol": 0.0001,
+    "final_estimator__verbose": 0,
+    "final_estimator__warm_start": false,
+    "n_jobs": -1,
+    "passthrough": false,
+    "stack_method": "auto",
+    "verbose": 0,
+    "rf__bootstrap": true,
+    "rf__ccp_alpha": 0.0,
+    "rf__class_weight": null,
+    "rf__criterion": "gini",
+    "rf__max_depth": 8,
+    "rf__max_features": "sqrt",
+    "rf__max_leaf_nodes": null,
+    "rf__max_samples": null,
+    "rf__min_impurity_decrease": 0.0,
+    "rf__min_samples_leaf": 5,
+    "rf__min_samples_split": 10,
+    "rf__min_weight_fraction_leaf": 0.0,
+    "rf__monotonic_cst": null,
+    "rf__n_estimators": 500,
+    "rf__n_jobs": null,
+    "rf__oob_score": false,
+    "rf__random_state": 42,
+    "rf__verbose": 0,
+    "rf__warm_start": false,
+    "xgb__objective": "binary:logistic",
+    "xgb__base_score": null,
+    "xgb__booster": null,
+    "xgb__callbacks": null,
+    "xgb__colsample_bylevel": null,
+    "xgb__colsample_bynode": null,
+    "xgb__colsample_bytree": null,
+    "xgb__device": null,
+    "xgb__early_stopping_rounds": null,
+    "xgb__enable_categorical": false,
+    "xgb__eval_metric": "logloss",
+    "xgb__feature_types": null,
+    "xgb__feature_weights": null,
+    "xgb__gamma": null,
+    "xgb__grow_policy": null,
+    "xgb__importance_type": null,
+    "xgb__interaction_constraints": null,
+    "xgb__learning_rate": 0.05,
+    "xgb__max_bin": null,
+    "xgb__max_cat_threshold": null,
+    "xgb__max_cat_to_onehot": null,
+    "xgb__max_delta_step": null,
+    "xgb__max_depth": 3,
+    "xgb__max_leaves": null,
+    "xgb__min_child_weight": null,
+    "xgb__missing": "nan",
+    "xgb__monotone_constraints": null,
+    "xgb__multi_strategy": null,
+    "xgb__n_estimators": 200,
+    "xgb__n_jobs": null,
+    "xgb__num_parallel_tree": null,
+    "xgb__random_state": 42,
+    "xgb__reg_alpha": null,
+    "xgb__reg_lambda": null,
+    "xgb__sampling_method": null,
+    "xgb__scale_pos_weight": null,
+    "xgb__subsample": null,
+    "xgb__tree_method": null,
+    "xgb__validate_parameters": null,
+    "xgb__verbosity": 0,
+    "lgbm__boosting_type": "gbdt",
+    "lgbm__class_weight": null,
+    "lgbm__colsample_bytree": 0.7,
+    "lgbm__importance_type": "split",
+    "lgbm__learning_rate": 0.01,
+    "lgbm__max_depth": 6,
+    "lgbm__min_child_samples": 100,
+    "lgbm__min_child_weight": 0.001,
+    "lgbm__min_split_gain": 0.0,
+    "lgbm__n_estimators": 800,
+    "lgbm__n_jobs": null,
+    "lgbm__num_leaves": 15,
+    "lgbm__objective": null,
+    "lgbm__random_state": 42,
+    "lgbm__reg_alpha": 0.0,
+    "lgbm__reg_lambda": 0.0,
+    "lgbm__subsample": 0.8,
+    "lgbm__subsample_for_bin": 200000,
+    "lgbm__subsample_freq": 0,
+    "lgbm__verbose": -1
+  },
+  "model_artifacts": {
+    "model.pkl": {
+      "sha256": "62b17b669887ec11523c3ea0ada58b0bdae96dc93c5c65b328476a05631d1b4e",
+      "mlflow_path": "model/model.pkl"
+    },
+    "explainer.pkl": {
+      "sha256": "ad7ba006b0f05c4a14d7b336303a9f1a1940b403e3dbdcb6da363476af63d0d7",
+      "mlflow_path": "model/explainer.pkl"
+    },
+    "feature_names.pkl": {
+      "sha256": "63fcecec08bceea107877245e8f1f2967a92052ab696e269928f877dacc2232f",
+      "mlflow_path": "model/feature_names.pkl"
+    }
+  },
+  "report_artifacts": {
+    "metrics.json": {
+      "sha256": "368a8c96234385f032c51c5c9302a479ed8cd092aa951e3ccd1f4c6acdc61b25"
+    },
+    "classification_report.json": {
+      "sha256": "89a5973016ae614368f6a3e279d51988e15ce202e11dbcf384e84b404bb4a717"
+    },
+    "cv_scores.csv": {
+      "sha256": "ff758c731126690c916dd28982b12c9217eef3ce82b056329f5977522421d796"
+    },
+    "confusion_matrix.png": {
+      "sha256": "4b5440d864f21d7cbdea1316af5be12123bfcfc2ef7d4370e347eea8ef41141e"
+    }
+  },
+  "finished_at": "2026-11-01T16:17:44.642868+00:00"
+}

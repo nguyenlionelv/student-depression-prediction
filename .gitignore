@@ -21,6 +21,16 @@ venv/
 /model/*
 !/model/README.md
 
+# Version evaluation reports while keeping serialized models ignored
+!/model/reports/
+/model/reports/**
+!/model/reports/**/
+!/model/reports/**/metrics.json
+!/model/reports/**/classification_report.json
+!/model/reports/**/cv_scores.csv
+!/model/reports/**/confusion_matrix.png
+!/model/reports/**/metadata.json
+
 # MLflow experiment outputs
 mlruns/
 mlartifacts/
