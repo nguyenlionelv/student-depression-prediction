@@ -15,6 +15,12 @@ venv/
 # Notebook checkpoints
 .ipynb_checkpoints/
 
+# Local datasets and model artifacts; keep their documentation versioned
+/data/*
+!/data/README.md
+/model/*
+!/model/README.md
+
 # MLflow experiment outputs
 mlruns/
 mlartifacts/
